@@ -61,9 +61,12 @@ export default function Navbar() {
           <Link href="/products" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
             Products
           </Link>
-          <a href="#about" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
-            About Us
-          </a>
+          <Link href="/restaurants" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
+            Restaurants
+          </Link>
+          <Link href="/login" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
+            Login
+          </Link>
           <a href="#contact" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
             Contact US
           </a>
