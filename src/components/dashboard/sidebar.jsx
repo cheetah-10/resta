@@ -98,6 +98,24 @@ export default function Sidebar() {
               </span>
             </Link>
           </li>
+          <li>
+            <Link
+              href="/dashboard/restaurants"
+              className="flex items-center text-2xl gap-3 px-2 py-2 rounded hover:bg-[#d39f12]/20"
+            >
+              <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 10V6a3 3 0 0 1 3-3a3 3 0 0 1 3 3v4m3-2l.917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z" />
+              </svg>
+
+              <span
+                className={`transition-all duration-300 ${
+                  sidebarOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+                }`}
+              >
+                Restaurants
+              </span>
+            </Link>
+          </li>
 
           {/* Sign Out */}
           <li>

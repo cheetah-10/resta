@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import axios, { isAxiosError } from 'axios'
-// import { getAuthToken } from '@/lib/getAuthToken'
 import toast from 'react-hot-toast'
 import { useAuth } from '@/context/AuthContext'
 
