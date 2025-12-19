@@ -1,0 +1,43 @@
+export const categories = [
+  { id: 1, name: 'Vegetarian', image: '/cat1.png' },
+  { id: 2, name: 'Italian', image: '/cat2.png' },
+  { id: 3, name: 'American', image: '/cat3.png' },
+  { id: 4, name: 'Asian', image: '/cat4.png' },
+  { id: 5, name: 'Fast Food', image: '/cat5.png' },
+  { id: 6, name: 'Healthy', image: '/cat6.png' },
+  { id: 7, name: 'Chinese', image: '/cat7.png' },
+  { id: 8, name: 'Mexican', image: '/cat8.png' },
+  { id: 9, name: 'Sushi', image: '/cat9.png' },
+];
+const foodImg = '/images/food.png'
+
+export const productsData = [
+  { id: 1, name: 'Butter Sandwich', price: 89, discount: 0, finalPrice: 89, image: foodImg, stock: 10, categoryId: 1 },
+  { id: 2, name: 'Veggie Delight', price: 95, discount: 10, finalPrice: 85, image: foodImg, stock: 8, categoryId: 1 },
+  { id: 3, name: 'Caesar Salad', price: 120, discount: 20, finalPrice: 100, image: foodImg, stock: 15, categoryId: 1 },
+  { id: 4, name: 'Margherita Pizza', price: 150, discount: 15, finalPrice: 135, image: foodImg, stock: 12, categoryId: 2 },
+  { id: 5, name: 'Pasta Carbonara', price: 140, discount: 0, finalPrice: 140, image: foodImg, stock: 10, categoryId: 2 },
+  { id: 6, name: 'Lasagna', price: 160, discount: 10, finalPrice: 144, image: foodImg, stock: 7, categoryId: 2 },
+  { id: 7, name: 'Classic Burger', price: 89, discount: 0, finalPrice: 89, image: foodImg, stock: 20, categoryId: 3 },
+  { id: 8, name: 'BBQ Ribs', price: 180, discount: 15, finalPrice: 153, image: foodImg, stock: 9, categoryId: 3 },
+  { id: 9, name: 'Hot Dog', price: 65, discount: 5, finalPrice: 62, image: foodImg, stock: 25, categoryId: 3 },
+  { id: 10, name: 'Pad Thai', price: 110, discount: 0, finalPrice: 110, image: foodImg, stock: 11, categoryId: 4 },
+  { id: 11, name: 'Spring Rolls', price: 75, discount: 10, finalPrice: 68, image: foodImg, stock: 18, categoryId: 4 },
+  { id: 12, name: 'Tom Yum Soup', price: 95, discount: 0, finalPrice: 95, image: foodImg, stock: 14, categoryId: 4 },
+  { id: 13, name: 'French Fries', price: 45, discount: 0, finalPrice: 45, image: foodImg, stock: 30, categoryId: 5 },
+  { id: 14, name: 'Chicken Nuggets', price: 70, discount: 10, finalPrice: 63, image: foodImg, stock: 22, categoryId: 5 },
+  { id: 15, name: 'Onion Rings', price: 55, discount: 0, finalPrice: 55, image: foodImg, stock: 28, categoryId: 5 },
+  { id: 16, name: 'Quinoa Bowl', price: 130, discount: 0, finalPrice: 130, image: foodImg, stock: 10, categoryId: 6 },
+  { id: 17, name: 'Green Smoothie', price: 80, discount: 5, finalPrice: 76, image: foodImg, stock: 15, categoryId: 6 },
+  { id: 18, name: 'Avocado Toast', price: 95, discount: 0, finalPrice: 95, image: foodImg, stock: 12, categoryId: 6 },
+  { id: 19, name: 'Fried Rice', price: 85, discount: 0, finalPrice: 85, image: foodImg, stock: 16, categoryId: 7 },
+  { id: 20, name: 'Dim Sum', price: 120, discount: 15, finalPrice: 102, image: foodImg, stock: 10, categoryId: 7 },
+  { id: 21, name: 'Sweet and Sour Chicken', price: 105, discount: 0, finalPrice: 105, image: foodImg, stock: 13, categoryId: 7 },
+  { id: 22, name: 'Tacos', price: 90, discount: 10, finalPrice: 81, image: foodImg, stock: 19, categoryId: 8 },
+  { id: 23, name: 'Burrito', price: 110, discount: 0, finalPrice: 110, image: foodImg, stock: 14, categoryId: 8 },
+  { id: 24, name: 'Quesadilla', price: 100, discount: 5, finalPrice: 95, image: foodImg, stock: 16, categoryId: 8 },
+  { id: 25, name: 'California Roll', price: 140, discount: 0, finalPrice: 140, image: foodImg, stock: 11, categoryId: 9 },
+  { id: 26, name: 'Salmon Sashimi', price: 180, discount: 10, finalPrice: 162, image: foodImg, stock: 8, categoryId: 9 },
+  { id: 27, name: 'Tuna Roll', price: 150, discount: 0, finalPrice: 150, image: foodImg, stock: 9, categoryId: 9 },
+];
+
