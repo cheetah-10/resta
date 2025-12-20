@@ -4,6 +4,7 @@ import { useOtp } from '@/context/OtpContext';
 import { auth } from '@/lib/firebase';
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 import Image from 'next/image'
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
@@ -44,7 +45,9 @@ export default function Login() {
 
       setConfirmationResult(confirmationResult)
       toast.success("OTP sent")
+    
       setMode("login");
+      localStorage.setItem('phone',phone)
       router.push("/verify");
 
     } catch (err) {
@@ -83,7 +86,7 @@ export default function Login() {
                   {loading ? "Sending..." : "Next"}
 
                 </button>
-                <p className='mt-14 text-[#808080]'>Don't have an Account? <span className='text-red-600'>Register</span></p>
+                <p className='mt-14 text-[#808080]'>Don't have an Account? <Link href="/register" className='text-red-600'>Register</Link></p>
               </div>
 
               <div id="recaptcha-container"></div>

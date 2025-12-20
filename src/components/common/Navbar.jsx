@@ -4,12 +4,15 @@ import { useEffect, useState } from "react";
 import svgPaths from '../../../imports/svg';
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-   const { getCartItemCount } = useCart();
-     const [scrolled, setScrolled] = useState(false);
-
+  const { getCartItemCount } = useCart();
+  const [scrolled, setScrolled] = useState(false);
+  const { token } = useAuth()
+  const router = useRouter()
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -19,8 +22,12 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const logout = ()=>{
+    localStorage.removeItem('token')
+    router.push('/login')
+  }
   return (
- <header
+    <header
       className={`
         fixed top-0 left-0 right-0 z-50
         transition-colors duration-300
@@ -64,12 +71,20 @@ export default function Navbar() {
           <Link href="/restaurants" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
             Restaurants
           </Link>
-          <Link href="/login" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
+
+          <Link href="/dashboard" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
+            Dashboard
+          </Link>
+          {token ? (<Link onClick={logout} href="/login" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
+            Sign out
+          </Link>) : (<> <Link href="/login" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
             Login
           </Link>
-          <a href="#contact" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
-            Contact US
-          </a>
+          <Link href="/register" className="text-white text-base lg:text-lg hover:text-[#ffbb15] transition-colors">
+            Sign up
+          </Link></>)}
+
+
         </nav>
 
         {/* Icons */}
@@ -82,15 +97,15 @@ export default function Navbar() {
           </button>
           <Link href='/cart' className="relative w-10 h-10 flex items-center justify-center text-white hover:text-[#ffbb15] transition-colors">
             <svg className="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-          </svg>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
             <span className="absolute -top-3 -right-3 w-7 h-7 bg-red-600 rounded-full flex items-center justify-center text-[18px] text-white">
-               {getCartItemCount()}
+              {getCartItemCount()}
             </span>
           </Link>
-          
+
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden w-10 h-10 flex items-center justify-center text-white hover:text-[#ffbb15] transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >

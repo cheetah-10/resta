@@ -1,13 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 export default function Sidebar() {
+  const router = useRouter()
   const [sidebarOpen, setSidebarOpen] = useState(true)
+ const logOut = ()=>{
+  localStorage.removeItem('token')
+  router.push('/login')
+ }
+  return (<>
  
-  return (
+ 
     <aside
       className={`
         fixed left-0 z-40 h-full
@@ -37,7 +43,15 @@ export default function Sidebar() {
               </svg>
             </button>
           </li>
-
+<li>
+   <div className="px-4 py-3 border-b">
+                    <p className="text-xl">
+                      Admin
+                    </p>
+                  
+                  </div>
+               
+</li>
           {/* Dashboard */}
           <li>
             <Link
@@ -119,7 +133,7 @@ export default function Sidebar() {
 
           {/* Sign Out */}
           <li>
-            <Link
+            <Link onClick={logOut}
               href="/login"
               className="flex text-2xl items-center gap-3 px-2 py-2 rounded hover:bg-[#d39f12]/20"
             >
@@ -140,5 +154,6 @@ export default function Sidebar() {
         </ul>
       </div>
     </aside>
+     </>
   )
 }

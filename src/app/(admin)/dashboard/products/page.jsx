@@ -109,7 +109,7 @@ export default function Page() {
                                     <Image
                                         width={60}
                                         height={40}
-                                        src={product.image?.secure_url || '/placeholder.png'}
+                                        src={product.image?.secure_url || '/images/galleryItem1.png'}
                                         alt={product.name}
                                         className="rounded"
                                     />

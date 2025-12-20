@@ -12,6 +12,7 @@ export default function CreaterestaurantModal({ onClose, setrestaurantsList }) {
     const [rating, setrating] = useState('')
     const [file, setFile] = useState(null)
     const [loading, setLoading] = useState(false)
+        const { token } = useAuth()
 
     const customInputStyles = `w-full px-4 py-3 rounded-xl
     bg-black text-white
@@ -22,7 +23,6 @@ export default function CreaterestaurantModal({ onClose, setrestaurantsList }) {
     focus:ring-2 focus:ring-[#FFBB15]/40
     transition`
     const handleSubmit = async (e) => {
-        const { token } = useAuth()
         e.preventDefault()
         if (!file) return alert('Image is required')
 

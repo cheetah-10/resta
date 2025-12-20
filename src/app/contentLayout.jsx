@@ -13,7 +13,7 @@ export default function ContentLayout({ children }) {
     useEffect(() => {
         if (path.includes('dashboard')) setIsNavbar(false)
         else setIsNavbar(true)
-    }, [])
+    }, [path])
 
     return (
 

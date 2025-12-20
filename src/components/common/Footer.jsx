@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className="bg-white w-full overflow-hidden shrink-0 relative h-[752px]">
       <div className="absolute bottom-0 h-full w-full left-1/2 -translate-x-1/2 max-w-[1920px]">
-        <img alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none" src='images/footer.png' />
+        <img alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none" src='/images/footer.png' />
       </div>
       <div className="absolute bg-[rgba(0,0,0,0.7)] h-full w-full mix-blend-hard-light" />
 

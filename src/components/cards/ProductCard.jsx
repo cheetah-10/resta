@@ -16,7 +16,6 @@ export default function ProductCard({ product }) {
 
   return (
     <div
-      // onClick={goToDetails}
       className="bg-white border border-[rgba(0,0,0,0.2)] border-solid rounded-[20px] overflow-hidden flex flex-col w-full max-w-[343px]">
       <div className="relative bg-white rounded-bl-[200px] rounded-br-[200px] rounded-tl-[10px] rounded-tr-[10px] overflow-hidden h-[310px]">
         <div className="absolute -left-1 -top-9 rounded-[62px] w-[350px] h-[350px]">
@@ -57,7 +56,7 @@ export default function ProductCard({ product }) {
 
 
         <button
-          onClick={() => { handleAddToCart }}
+          onClick={handleAddToCart}
           className="bg-[#ffbb15] cursor-pointer text-[#410c0c] font-['Open_Sans:Regular',sans-serif] uppercase tracking-widest px-8 py-3 rounded hover:bg-[#e5a613] transition-colors w-full"
         >
           Add to Cart

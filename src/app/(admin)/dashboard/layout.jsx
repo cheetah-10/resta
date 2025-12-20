@@ -9,7 +9,7 @@ export default function DashboardLayout({children}){
         <div className=''>
             <Sidebar/>
 
-            <div className="p-4 pt-0 sm:ml-64 relative">
+            <div className="p-4 pt-0 sm:ml-64 top-25 relative">
                 {children}
             </div>
         </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import RestaurantCard from "./cards/RestaurantCard";
 
 
@@ -53,9 +54,9 @@ export default function RestaurantsSection() {
 
                 {/* View All Button */}
                 <div className="text-center">
-                    <button className="px-12 py-3 border-3 border-[#ffbb15] text-black text-lg md:text-[20px] font-medium rounded-lg hover:bg-[#ffbb15] hover:text-white transition-all">
+                    <Link href='/restaurants' className="px-12 py-3 border-3 border-[#ffbb15] text-black text-lg md:text-[20px] font-medium rounded-lg hover:bg-[#ffbb15] hover:text-white transition-all">
                         View All
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

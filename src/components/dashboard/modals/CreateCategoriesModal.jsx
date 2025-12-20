@@ -24,9 +24,9 @@ export default function CreateCategoriesModal({ onClose,
     transition
   `
 
+    const {token} = useAuth()
 
     const handleSubmit = async (e) => {
-    const {token} = useAuth()
         e.preventDefault()
 
         try {

@@ -15,6 +15,8 @@ export default function UpdaterestaurantModal({ id, onClose, setrestaurantsList,
     const [rating, setrating] = useState('')
     const [file, setFile] = useState(null)
     const [loading, setLoading] = useState(false)
+    const { token } = useAuth()
+
     const customInputStyles = `w-full px-4 py-3 rounded-xl
     bg-black text-white
     border border-[#FFBB15]/30
@@ -25,7 +27,6 @@ export default function UpdaterestaurantModal({ id, onClose, setrestaurantsList,
     transition`
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const { token } = useAuth()
 
         const formData = new FormData()
         formData.append('name', name)

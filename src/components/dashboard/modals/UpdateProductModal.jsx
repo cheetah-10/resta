@@ -19,6 +19,8 @@ export default function UpdateProductModal({ id, onClose, setProductsList, produ
     const [restaurantId, setRestaurantId] = useState(product.restaurantId)
     const [file, setFile] = useState(null)
     const [loading, setLoading] = useState(false)
+    const { token } = useAuth()
+
     const customInputStyles = `w-full px-4 py-3 rounded-xl
     bg-black text-white
     border border-[#FFBB15]/30
@@ -29,7 +31,6 @@ export default function UpdateProductModal({ id, onClose, setProductsList, produ
     transition`
     const handleSubmit = async (e) => {
         e.preventDefault()
-    const {token} = useAuth()
 
         const formData = new FormData()
         formData.append('name', name)
@@ -46,11 +47,11 @@ export default function UpdateProductModal({ id, onClose, setProductsList, produ
             setLoading(true)
             const res = await axios.patch(
                 `http://localhost:5000/product/${id}`,
-                formData,  {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
+                formData, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
             )
 
             setProductsList(prev =>
@@ -96,9 +97,9 @@ export default function UpdateProductModal({ id, onClose, setProductsList, produ
                     <input type="number" value={price} onChange={e => setPrice(e.target.value)} className={customInputStyles} />
                     <input type="number" value={discount} onChange={e => setDiscount(e.target.value)} className={customInputStyles} />
                     <input type="number" value={stock} onChange={e => setStock(e.target.value)} className={customInputStyles} />
-                    <input value={categoryId} onChange={e => setCategoryId(e.target.value)} className={customInputStyles}/>
+                    <input value={categoryId} onChange={e => setCategoryId(e.target.value)} className={customInputStyles} />
                     <input value={restaurantId} onChange={e => setRestaurantId(e.target.value)} className={customInputStyles} />
-                    <input type="file" onChange={e => setFile(e.target.files[0])} className={customInputStyles}/>
+                    <input type="file" onChange={e => setFile(e.target.files[0])} className={customInputStyles} />
 
                     <div className="sm:col-span-2 flex justify-end gap-3">
                         <button type="button" onClick={onClose} className='px-4 py-2 rounded-xl text-sm
